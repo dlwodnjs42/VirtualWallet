@@ -78,7 +78,7 @@ to the transaction account(s) needs to be provide by the wallet interface.
 
 # Exceptions
 
-*NotEnoughBalanceException*
+**NotEnoughBalanceException**
 
 1.a User might not have enough balance to make a transfer or withdrawal.
 
