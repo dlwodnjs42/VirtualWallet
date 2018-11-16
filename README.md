@@ -4,9 +4,11 @@ Design Choices
 ----------------------------------
 # Model
 ***Transaction***
+
 1.(id, timestamp, form, amount, w1, w2)
 
 ***User***
+
 1.(id, wallet, name, password)
 
 2.Each user can at most have one wallet; therefore, I did a @OnetoOne mapping from user to Wallet.
@@ -15,6 +17,7 @@ Design Choices
 
 
 ***Wallet***
+
 1.(id, balance, user, log)
 
 2.To accomodate the ability to find all the transactions done for a specific wallet or "account", I would store all services(deposit/withdrawal/transfer) inside a log to have quick and easy access. As the userbase expands, the database may be subject to a lot of memory storage; however, I thought that scaling horizontally would be better than scaling vertically in the future. 
@@ -72,16 +75,16 @@ to the transaction account(s) needs to be provide by the wallet interface.
 
 # Exceptions
 
-***NotEnoughBalanceException:***
+1.***NotEnoughBalanceException:***
 a User might not have enough balance to make a transfer or withdrawal.
 
-***TransactionNotFoundException:***
+2.***TransactionNotFoundException:***
 a Transaction may not exist
 
-***UserNotFoundException:***
+3.***UserNotFoundException:***
 a User might not exist
 
-***WalletNotFoundException:***
+4.***WalletNotFoundException:***
 a User might not have a Wallet
 
 
@@ -92,7 +95,7 @@ I actually had a few JpaDataTests that tested for logic with the transfer/deposi
 
 ***API endpoint/integration - endpoint logic***
 
-2.I tested API endpoints/integration with Postman. I tried to test with Junit but difficult to test endpoints that save to a respository because you cant have "JpaDataTest" and "SpringBootApplication" to test both the repository and endpoints.
+I tested API endpoints/integration with Postman. I tried to test with Junit but difficult to test endpoints that save to a respository because you cant have "JpaDataTest" and "SpringBootApplication" to test both the repository and endpoints.
 
 
 # Future/Ideas
