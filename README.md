@@ -3,13 +3,12 @@
 Design Choices
 ----------------------------------
 # Model
-*Transaction*
-
+Transaction
+------------
 1.(id, timestamp, form, amount, w1, w2)
 
-
-*User*
-
+User
+-----------
 1.(id, wallet, name, password)
 
 2.Each user can at most have one wallet; therefore, I did a @OnetoOne mapping from user to Wallet.
@@ -17,8 +16,8 @@ Design Choices
 3.A Wallet is not initialized when a user is initialized and must be created.
 
 
-*Wallet*
-
+Wallet
+-----------
 1.(id, balance, user, log)
 
 2.To accomodate the ability to find all the transactions done for a specific wallet or "account", I would store all services(deposit/withdrawal/transfer) inside a log to have quick and easy access. As the userbase expands, the database may be subject to a lot of memory storage; however, I thought that scaling horizontally would be better than scaling vertically in the future. 
@@ -26,23 +25,15 @@ Design Choices
 
 # Constraints: 
 1.A virtual wallet is used to access one or more transaction accounts. A user can have multiple
-
 transaction accounts. For the sake of this tech challenge, a user will have a single wallet and all access
-
 to the transaction account(s) needs to be provide by the wallet interface.
 
 2.The library should provide clear public endpoints to
-
 3.Create a new wallet for a user
-
 4.Return current account balance
-
 5.Perform a withdrawal transaction on an account
-
 6.Perform a deposit transaction on an account
-
 7.Perform a transfer from one account to another account
-
 8.Return last N transactions for an account
 
 
@@ -78,16 +69,16 @@ to the transaction account(s) needs to be provide by the wallet interface.
 
 # Exceptions
 
-***NotEnoughBalanceException***
+***NotEnoughBalanceException:***
 a User might not have enough balance to make a transfer or withdrawal.
 
-***TransactionNotFoundException***
+***TransactionNotFoundException:***
 a Transaction may not exist
 
-***UserNotFoundException***
+***UserNotFoundException:***
 a User might not exist
 
-***WalletNotFoundException***
+***WalletNotFoundException:***
 a User might not have a Wallet
 
 
