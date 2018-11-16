@@ -32,13 +32,21 @@ to the transaction account(s) needs to be provide by the wallet interface.
 
 *Created an API with methods:*
 1.deposit
+
 2.withdrawal
+
 3.transfer
+
 4.findBalance
+
 5.findTransactionbyid
+
 6.findTransactions
+
 7.findUsers
+
 8.findNTransactions
+
 9. ...
 
 
