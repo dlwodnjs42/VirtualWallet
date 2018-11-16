@@ -78,21 +78,17 @@ to the transaction account(s) needs to be provide by the wallet interface.
 
 # Exceptions
 
-**NotEnoughBalanceException**
+***NotEnoughBalanceException***
+a User might not have enough balance to make a transfer or withdrawal.
 
-1.a User might not have enough balance to make a transfer or withdrawal.
+***TransactionNotFoundException***
+a Transaction may not exist
 
-*TransactionNotFoundException*
+***UserNotFoundException***
+a User might not exist
 
-1.a Transaction may not exist
-
-*UserNotFoundException*
-
-1.a User might not exist
-
-*WalletNotFoundException*
-
-1.a User might not have a Wallet
+***WalletNotFoundException***
+a User might not have a Wallet
 
 
 # Testing
